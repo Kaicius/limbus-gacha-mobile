@@ -3,6 +3,7 @@ import { ActivityIndicator } from "react-native";
 import { addCurrency } from "@services/api";
 import { usePlayer } from "@context/PlayerContext";
 import { colors } from "@/theme";
+import LunacyIcon from "@components/lunacy-icon";
 import * as S from "./style";
 
 const PlayerBar = ({ left }) => {
@@ -29,7 +30,7 @@ const PlayerBar = ({ left }) => {
       <S.Right>
         <S.Name>{player.username}</S.Name>
         <S.Lunacy>
-          <S.LunacyIcon>◆</S.LunacyIcon>
+          <LunacyIcon size={20} />
           <S.LunacyValue>{player.currency.toLocaleString("pt-BR")}</S.LunacyValue>
           <S.AddButton onPress={handleAddCurrency} disabled={loading}>
             {loading

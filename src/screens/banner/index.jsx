@@ -6,6 +6,7 @@ import { usePlayer } from "@context/PlayerContext";
 import PlayerBar from "@components/player-bar";
 import { Button, ButtonText, ErrorText, Screen } from "@components/ui";
 import { COST_PER_PULL, colors } from "@/theme";
+import LunacyIcon from "@components/lunacy-icon";
 import * as S from "./style";
 
 const PITY_LIMIT = 10;
@@ -119,12 +120,12 @@ const Banner = () => {
 
           <S.Buttons>
             <S.PullButton onPress={() => setConfirmAmount(1)} disabled={!canAfford(1)}>
-              <S.PullTitle>Extrair 1x</S.PullTitle>
-              <S.PullCost>◆ {COST_PER_PULL}</S.PullCost>
+              <S.PullTitle>1x</S.PullTitle>
+              <S.PullCost><LunacyIcon size={14} /> {COST_PER_PULL}</S.PullCost>
             </S.PullButton>
             <S.PullButton $main onPress={() => setConfirmAmount(10)} disabled={!canAfford(10)}>
-              <S.PullTitle $main>Extrair 10x</S.PullTitle>
-              <S.PullCost $main>◆ {COST_PER_PULL * 10}</S.PullCost>
+              <S.PullTitle $main>10x</S.PullTitle>
+              <S.PullCost $main><LunacyIcon size={14} /> {COST_PER_PULL * 10}</S.PullCost>
             </S.PullButton>
           </S.Buttons>
         </S.Side>
@@ -141,11 +142,11 @@ const Banner = () => {
           <S.Dialog>
             <S.DialogTitle>Confirmar extração</S.DialogTitle>
             <S.DialogText>
-              Gastar <S.HintStrong>◆ {cost}</S.HintStrong> Lunacy em {confirmAmount}x extração
+              Gastar <S.HintStrong><LunacyIcon size={14} /> {cost}</S.HintStrong> Lunacy em {confirmAmount}x extração
               {confirmAmount > 1 ? "s" : ""}?
             </S.DialogText>
             <S.DialogText>
-              Saldo depois: ◆ {player.currency - cost}
+              Saldo depois: <LunacyIcon size={14} /> {player.currency - cost}
             </S.DialogText>
 
             <S.DialogButtons>
