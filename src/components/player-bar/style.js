@@ -40,11 +40,6 @@ const Lunacy = styled.View`
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
-const LunacyIcon = styled.Text`
-  color: ${colors.hot};
-  font-size: 14px;
-`;
-
 const LunacyValue = styled.Text`
   color: ${colors.text};
   font-size: 16px;
@@ -67,4 +62,4 @@ const AddText = styled.Text`
   line-height: 22px;
 `;
 
-export { AddButton, AddText, Bar, Left, Lunacy, LunacyIcon, LunacyValue, Name, Right };
+export { AddButton, AddText, Bar, Left, Lunacy, LunacyValue, Name, Right };
